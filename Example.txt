@@ -1,0 +1,28 @@
+Example
+
+1) I am hosting the microservice through Heroku. Here is a url to the service - 
+https://messages-microservice.herokuapp.com/messages
+
+Messages can be posted to the service using the following command:
+curl -X POST -H "Content-Type: application/json" -d '{"message": "example"}' https://messages-microservice.herokuapp.com/messages
+
+And get a response back using:
+curl -i https://messages-microservice.herokuapp.com/messages/50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c
+
+
+2) The app can be hosted locally as well.
+
+Install Node.js - 
+https://nodejs.org/en/
+
+Install Dependencies - 
+npm install
+
+Start Server - 
+npm start
+
+POST request - 
+curl -X POST -H "Content-Type: application/json" -d '{"message": "example"}' http://localhost:8000/messages
+
+GET request -
+curl -i http://localhost:8000/messages/50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c

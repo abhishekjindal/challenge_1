@@ -15,15 +15,19 @@ router.get('/:hash', function(req, res, next) {
   				console.log("error",err);
   			} else {
   				if (rows.length != 0) {
-  					res.send({"message": rows[0].message});
+  					res.send(JSON.stringify({"message": rows[0].message}) + "\n");
   				} else {
   					res.writeHead(404);
-  					res.end(JSON.stringify({"err_msg": "Message not found"}));
+  					res.end(JSON.stringify({"err_msg": "Message not found"}) + "\n");
   				}
    			}
   		});
   	});
 });
+
+router.get('/'), function(req, res, next) {
+  res.render('readme');
+}
 
 router.post('/', function(req, res, next) {
   	var message = req.body.message;
@@ -41,7 +45,7 @@ router.post('/', function(req, res, next) {
    			}
   		});
   	});
-  	res.send({"digest": digest});
+  	res.send(JSON.stringify({"digest": digest}) + "\n");
 });
 
 

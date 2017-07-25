@@ -1,0 +1,7 @@
+What would the bottlenecks in your implementation be as you acquire more users. How you might 
+scale your microservice?
+
+As we acquire more users who send messages, the database is going to keep on becoming larger 
+and it would get longer to query the data from the database.
+
+A solution is setting an INDEX in SQL for the hash column in the table.
