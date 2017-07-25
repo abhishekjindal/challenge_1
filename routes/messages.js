@@ -5,6 +5,9 @@ var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('messages.db');
 
 
+router.get('/', function(req, res, next) {
+  res.render('readme');
+})
 
 /* GET home page. */
 router.get('/:hash', function(req, res, next) {
@@ -25,9 +28,7 @@ router.get('/:hash', function(req, res, next) {
   	});
 });
 
-router.get('/'), function(req, res, next) {
-  res.render('readme');
-}
+
 
 router.post('/', function(req, res, next) {
   	var message = req.body.message;
