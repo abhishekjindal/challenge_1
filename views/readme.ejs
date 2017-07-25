@@ -1,13 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-  	<center>
-	    <h1><%= title %></h1>
-	    <p></p>
-	<center>
+    <h1>Messages</h1><br>
+    <p>
+    	<ol>
+	    	<li>I am hosting the microservice through Heroku. Here is a url to the service - 
+			https://messages-microservice.herokuapp.com/messages 
+				<ul>
+					<li>Messages can be posted to the service using the following command: <br>
+				curl -X POST -H "Content-Type: application/json" -d '{"message": "example"}' https:// messages-microservice.herokuapp.com/messages </li>
+
+					<li> And get a response back using: <br>
+				curl -i https://messages-microservice.herokuapp.com/ messages/50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c </li>
+				</ul>
+			</li>
+
+			<li>The app can be hosted locally as well. <br>
+				<ul>
+					<li>Install Node.js -  <br>
+						https://nodejs.org/en/ </li>
+
+					<li>Install Dependencies -  <br>
+						npm install </li>
+
+					<li>Start Server - <br>
+						npm start </li>
+
+					<li>POST request - <br>
+						curl -X POST -H "Content-Type: application/json" -d '{"message": "example"}' http://localhost:8000/messages </li>
+
+					<li>GET request - <br>
+						curl -i http://localhost:8000/messages/50d858e0985ecc7f60418aaf0cc5ab587f42c2570a884095a9e8ccacd0f6545c </li>
+				</ul>
+			</li>
+		</ol>
+    </p>
   </body>
 </html>
